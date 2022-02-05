@@ -66,7 +66,8 @@
                 <p>MAR 9, 2019</p>
                 <h3>Juno Tech Test</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                <button>Read more</button>
+                <p class="toggle" style="display: none;">test</p>
+                <button id="btn_01">Read more</button>
               </div>
             </li>
 
@@ -209,7 +210,19 @@
 
 
 
+  <script>
+    const btn_01 = document.getElementById('btn_01'); // btn_01 element
+    const toggle_01 = document.querySelector('.toggle'); // p tag element
 
+    btn_01.addEventListener("click", () => {
+      if (toggle_01.style.display === "none") {
+        toggle_01.style.display = "block"
+      } else {
+        toggle_01.style.display = "none"
+      }
+
+    });
+  </script>
 
 </body>
 
