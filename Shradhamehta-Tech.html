@@ -66,7 +66,7 @@
                 <p>MAR 9, 2019</p>
                 <h3>Juno Tech Test</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                <p class="toggle" style="display: none;">test</p>
+                <p class="toggle_01" style="display: none;">Lorem ipsum dolor</p>
                 <button id="btn_01">Read more</button>
               </div>
             </li>
@@ -77,7 +77,8 @@
                 <p>MAR 15, 2019</p>
                 <h3>Juno Tech Test</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                <button>Read more</button>
+                <p class="toggle_02" style="display: none;">Lorem ipsum dolor</p>
+                <button id="btn_02">Read more</button>
               </div>
             </li>
 
@@ -102,7 +103,8 @@
                   minus reiciendis nihil doloribus consequuntur, libero vitae? Corporis sunt consequuntur quae dolore
                   vero
                   voluptate tenetur ab!</p>
-                <button>Read more</button>
+                <p class="toggle_03" style="display: none;">Lorem ipsum dolor</p>
+                <button id="btn_03">Read more</button>
               </div>
             </li>
           </ul>
@@ -128,7 +130,8 @@
                   <p>MAR 15, 2019</p>
                   <h3>Juno Tech Test</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                  <button>Read more</button>
+                  <p class="toggle_04" style="display: none;">Lorem ipsum dolor</p>
+                  <button id="btn_04">Read more</button>
                 </div>
               </li>
 
@@ -138,7 +141,8 @@
                   <p>MAR 15, 2019</p>
                   <h3>Juno Tech Test</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                  <button>Read more</button>
+                  <p class="toggle_05" style="display: none;">Lorem ipsum dolor</p>
+                  <button id="btn_05">Read more</button>
                 </div>
               </li>
 
@@ -148,7 +152,8 @@
                   <p>MAR 15, 2019</p>
                   <h3>Juno Tech Test</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                  <button>Read more</button>
+                  <p class="toggle_06" style="display: none;">Lorem ipsum dolor</p>
+                  <button id="btn_06">Read more</button>
                 </div>
               </li>
             </ul>
@@ -211,17 +216,34 @@
 
 
   <script>
+    //1. select the btn button by ID
     const btn_01 = document.getElementById('btn_01'); // btn_01 element
-    const toggle_01 = document.querySelector('.toggle'); // p tag element
+    const btn_02 = document.getElementById('btn_02'); // btn_02 element
+    const btn_03 = document.getElementById('btn_03'); // btn_03 element
+    const btn_04 = document.getElementById('btn_04'); // btn_03 element
+    const btn_05 = document.getElementById('btn_05'); // btn_03 element
+    const btn_06 = document.getElementById('btn_06'); // btn_03 element
+    const toggle_01 = document.querySelector('.toggle_01'); // p tag element
+    const toggle_02 = document.querySelector('.toggle_02'); // p tag element
+    const toggle_03 = document.querySelector('.toggle_03'); // p tag element
+    const toggle_04 = document.querySelector('.toggle_04'); // p tag element
+    const toggle_05 = document.querySelector('.toggle_05'); // p tag element
+    const toggle_06 = document.querySelector('.toggle_06'); // p tag element
 
-    btn_01.addEventListener("click", () => {
-      if (toggle_01.style.display === "none") {
-        toggle_01.style.display = "block"
+    const toggleButton = (element) => {
+      if (element.style.display === "none") {
+        element.style.display = "block"
       } else {
-        toggle_01.style.display = "none"
+        element.style.display = "none"
       }
+    };
 
-    });
+    btn_01.addEventListener("click", () => toggleButton(toggle_01));
+    btn_02.addEventListener("click", () => toggleButton(toggle_02));
+    btn_03.addEventListener("click", () => toggleButton(toggle_03));
+    btn_04.addEventListener("click", () => toggleButton(toggle_04));
+    btn_05.addEventListener("click", () => toggleButton(toggle_05));
+    btn_06.addEventListener("click", () => toggleButton(toggle_06));
   </script>
 
 </body>
