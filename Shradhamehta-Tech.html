@@ -185,11 +185,11 @@
         <p><span>&#174;</span> 2019-2000 Juno College of Technology</p>
       </div>
 
-      <form action="#" class="form">
+      <form action="#" class="form" id="form">
         <p>Join our mailing list</p>
         <label for="userEmail"></label>
         <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email">
-        <button>Subscribe</button>
+        <button id="btn_07">Subscribe</button>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel laudantium quisquam dolorum</p>
         <div class="icons">
           <a href="https://www.facebook.com/">
@@ -244,7 +244,41 @@
     btn_04.addEventListener("click", () => toggleButton(toggle_04));
     btn_05.addEventListener("click", () => toggleButton(toggle_05));
     btn_06.addEventListener("click", () => toggleButton(toggle_06));
+
+    //1. Arrays from were colors will be selected
+    const colors = ["#7B876D", "#989E8B", "#DDB8A6", "#F3B0C3", "#FF968A", "#C67F43", "#893F04"];
+
+    //2. Select the button
+    const btn_07 = document.getElementById("btn_07");
+    console.log('btn_07');
+
+
+    //3. Add eventlistener to the button
+    btn_07.addEventListener("click", function (event) {
+
+      //4. Prevent the form from submitting
+      event.preventDefault();
+
+      //5. get random number between 0-6
+      const randomNumber = getRandomNumber();
+      form.style.backgroundColor = colors[randomNumber];
+    });
+
+    // 6. function to get RandomNumber from the array
+    function getRandomNumber() {
+      return Math.floor(Math.random() * colors.length);
+    }
+
+
+
   </script>
+
+</body>
+
+</html>
+
+
+</script>
 
 </body>
 
