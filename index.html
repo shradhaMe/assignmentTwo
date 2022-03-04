@@ -43,7 +43,7 @@
     <div class="wrapper">
       <img src="./assets/image-1.jpg" alt="Juno College of Technology classroom with students">
       <div class="tech">
-        <h1>Tech Challenge</h1>
+        <h1>Classroom</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, fugit quisquam ipsum dolores dolore
           pariatur voluptate impedit adipisci expedita dignissimos tempora nihil aspernatur molestiae voluptatum.</p>
       </div>
@@ -66,7 +66,8 @@
                 <p>MAR 9, 2019</p>
                 <h3>Juno Tech Test</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                <button>Read more</button>
+                <p class="toggle_01" style="display: none;">Lorem ipsum dolor</p>
+                <button id="btn_01">Read more</button>
               </div>
             </li>
 
@@ -76,7 +77,8 @@
                 <p>MAR 15, 2019</p>
                 <h3>Juno Tech Test</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                <button>Read more</button>
+                <p class="toggle_02" style="display: none;">Lorem ipsum dolor</p>
+                <button id="btn_02">Read more</button>
               </div>
             </li>
 
@@ -101,7 +103,8 @@
                   minus reiciendis nihil doloribus consequuntur, libero vitae? Corporis sunt consequuntur quae dolore
                   vero
                   voluptate tenetur ab!</p>
-                <button>Read more</button>
+                <p class="toggle_03" style="display: none;">Lorem ipsum dolor</p>
+                <button id="btn_03">Read more</button>
               </div>
             </li>
           </ul>
@@ -127,7 +130,8 @@
                   <p>MAR 15, 2019</p>
                   <h3>Juno Tech Test</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                  <button>Read more</button>
+                  <p class="toggle_04" style="display: none;">Lorem ipsum dolor</p>
+                  <button id="btn_04">Read more</button>
                 </div>
               </li>
 
@@ -137,7 +141,8 @@
                   <p>MAR 15, 2019</p>
                   <h3>Juno Tech Test</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                  <button>Read more</button>
+                  <p class="toggle_05" style="display: none;">Lorem ipsum dolor</p>
+                  <button id="btn_05">Read more</button>
                 </div>
               </li>
 
@@ -147,7 +152,8 @@
                   <p>MAR 15, 2019</p>
                   <h3>Juno Tech Test</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nemo ab</p>
-                  <button>Read more</button>
+                  <p class="toggle_06" style="display: none;">Lorem ipsum dolor</p>
+                  <button id="btn_06">Read more</button>
                 </div>
               </li>
             </ul>
@@ -179,11 +185,11 @@
         <p><span>&#174;</span> 2019-2000 Juno College of Technology</p>
       </div>
 
-      <form action="#" class="form">
+      <form action="#" class="form" id="form">
         <p>Join our mailing list</p>
         <label for="userEmail"></label>
         <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email">
-        <button>Subscribe</button>
+        <button id="btn_07">Subscribe</button>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel laudantium quisquam dolorum</p>
         <div class="icons">
           <a href="https://www.facebook.com/">
@@ -209,7 +215,70 @@
 
 
 
+  <script>
+    //1. select the btn button by ID
+    const btn_01 = document.getElementById('btn_01'); // btn_01 element
+    const btn_02 = document.getElementById('btn_02'); // btn_02 element
+    const btn_03 = document.getElementById('btn_03'); // btn_03 element
+    const btn_04 = document.getElementById('btn_04'); // btn_03 element
+    const btn_05 = document.getElementById('btn_05'); // btn_03 element
+    const btn_06 = document.getElementById('btn_06'); // btn_03 element
+    const toggle_01 = document.querySelector('.toggle_01'); // p tag element
+    const toggle_02 = document.querySelector('.toggle_02'); // p tag element
+    const toggle_03 = document.querySelector('.toggle_03'); // p tag element
+    const toggle_04 = document.querySelector('.toggle_04'); // p tag element
+    const toggle_05 = document.querySelector('.toggle_05'); // p tag element
+    const toggle_06 = document.querySelector('.toggle_06'); // p tag element
 
+    const toggleButton = (element) => {
+      if (element.style.display === "none") {
+        element.style.display = "block"
+      } else {
+        element.style.display = "none"
+      }
+    };
+
+    btn_01.addEventListener("click", () => toggleButton(toggle_01));
+    btn_02.addEventListener("click", () => toggleButton(toggle_02));
+    btn_03.addEventListener("click", () => toggleButton(toggle_03));
+    btn_04.addEventListener("click", () => toggleButton(toggle_04));
+    btn_05.addEventListener("click", () => toggleButton(toggle_05));
+    btn_06.addEventListener("click", () => toggleButton(toggle_06));
+
+    //1. Arrays from were colors will be selected
+    const colors = ["#7B876D", "#989E8B", "#DDB8A6", "#F3B0C3", "#FF968A", "#C67F43", "#893F04"];
+
+    //2. Select the button
+    const btn_07 = document.getElementById("btn_07");
+    console.log('btn_07');
+
+
+    //3. Add eventlistener to the button
+    btn_07.addEventListener("click", function (event) {
+
+      //4. Prevent the form from submitting
+      event.preventDefault();
+
+      //5. get random number between 0-6
+      const randomNumber = getRandomNumber();
+      form.style.backgroundColor = colors[randomNumber];
+    });
+
+    // 6. function to get RandomNumber from the array
+    function getRandomNumber() {
+      return Math.floor(Math.random() * colors.length);
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
+
+
+</script>
 
 </body>
 
